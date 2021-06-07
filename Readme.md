@@ -163,5 +163,3 @@ python3 3-matplot-bestrated-ranking.py
 ```
 
 ![](imgs/4-graph.png)
-
-git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch Video_Games.txt.gz' HEAD
