@@ -1,0 +1,6 @@
+#Using container
+#docker run -it --rm --name my-py2-tester -v "$PWD":/usr/src/myapp -w /usr/src/myapp python:2
+ 
+ # Number of reviews by game
+ 
+ cat Video_Games.txt | head -n 3000 |  python mapper.py | sort -k 1,1 | python reducer.py

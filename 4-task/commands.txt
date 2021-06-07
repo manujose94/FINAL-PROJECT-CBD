@@ -1,0 +1,18 @@
+#
+# List users and total reviews lowest highest
+#
+../hs mapper.py reducer.py videogames-alucloud31/Video_Games.json videogames-alucloud31/output
+  388  hadoop fs -text videogames-alucloud31/output/part-00000 > part-00000
+#
+# Top user reviewer
+#
+root@c253f1c55a21:/usr/src/myapp# cat Video_Games.json  | head -n 5000000 | ./mapper.py  | sort -k 1,1 | ./reducer.py 
+unknown         96993
+
+#Added filter
+
+$ hadoop fs -rm -r videogames-alucloud31/output2
+$ ../hs mapper.py top-reducer.py videogames-alucloud31/Video_Games.json videogames-alucloud31/output2
+$ hadoop fs -text videogames-alucloud31/output2/part-00000 > part-00000-2
+$ cat part-00000-2 
+Lisa Shea "be the change you wish to see in t... 	750

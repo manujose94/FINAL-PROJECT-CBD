@@ -1,0 +1,11 @@
+#
+# hs with reducer and params
+#
+../hs-mod videogames-alucloud31/Video_Games.json videogames-alucloud31/output
+
+/opt/hadoop/bin/hadoop jar /opt/hadoop/share/hadoop/tools/lib/hadoop-streaming-*.jar \
+-mapper mapper.py \
+-reducer 'reducer.py "World of Warcraft" ' \
+-file mapper.py -file reducer.py  \
+-input videogames-alucloud31/Video_Games.json \
+-output videogames-alucloud31/output 

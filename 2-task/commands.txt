@@ -1,0 +1,5 @@
+#
+# top Game with number of reviews
+#
+alucloud31@ubuntu:~/final/2-top-totalreview$ hadoop fs -text videogames-alucloud31/output/part-00000
+B000FKBCX4 	Spore 	3292

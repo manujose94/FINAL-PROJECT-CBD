@@ -1,0 +1,15 @@
+# (better-score-reviews-and-score)
+# Get for each game its average score
+#
+alucloud31@ubuntu:~/final/3-better-score-reviews-and-score$ ../hs mapper.py top-reducer.py videogames-alucloud31/Video_Games.json videogames-alucloud31/output
+alucloud31@ubuntu:~/final/3-better-score-reviews-and-score$ hadoop fs -text videogames-alucloud31/output/part-00000 > part-00000
+#
+# Top score ratio , totalScore and accounting for each type of note
+#
+root@782ece19a188:/usr/src/myapp# cat Video_Games.json | head -n 9000000 | python mapper.py | sort -k 1,1 | python top-reducer.py 
+The Legend of Zelda: Ocarina of Time (Collector's Edition)      4.84648187633   938
+
+alucloud31@ubuntu:~/final/3-better-score-reviews-and-score$ ../hs mapper.py top-reducer.py videogames-alucloud31/Video_Games.json videogames-alucloud31/output
+alucloud31@ubuntu:~/final/3-better-score-reviews-and-score$ hadoop fs -text videogames-alucloud31/output2/part-00000 > part-00000-2
+alucloud31@ubuntu:~/final/3-better-score-reviews-and-score$ cat part-00000-2 
+The Legend of Zelda: Ocarina of Time 	4.84648187633 	938
