@@ -2,6 +2,10 @@
 
 Final work developed for the **CBD** course on the use of the MapReduce programming model in Apache Hadoop.
 
+**Additional**:
+
+Here too, begging to work with [Spark](https://spark.apache.org/) through a series of simple exercises created for Hadoop Streaming and passed them on to a Spakr implementation.
+
 ## Context
 
 **MapReduce** is a programming model used for processing huge amounts of data. MapReduce program work in two phases, namely, Map and Reduce. Map tasks is responsible for splitting and mapping of data while Reduce tasks lead with shuffle and reduce the data.
