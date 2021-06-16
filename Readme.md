@@ -1,10 +1,14 @@
 # Final Work of CBD
 
+
+
+<img src="imgs/Apache_Spark_hadoop-min.png" style="zoom:80%;" />
+
 Final work developed for the **CBD** course on the use of the MapReduce programming model in Apache Hadoop.
 
 **Additional**:
 
-Here too, begging to work with [Spark](https://spark.apache.org/) through a series of simple exercises created for Hadoop Streaming and passed them on to a Spakr implementation.
+Here too, begging to work with [Spark](https://spark.apache.org/) through a series of simple exercises created for Hadoop Streaming and passed them on to a Spark implementation. Other examples/task [here](practices)
 
 ## Context
 
