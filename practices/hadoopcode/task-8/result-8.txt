@@ -1,0 +1,12 @@
+alucloud31@ubuntu:~/hadoopcode/task-8$ hadoop fs -text common_logs/output/part-00000 | grep combined.css
+/assets/css/combined.css 	117326
+alucloud31@ubuntu:~/hadoopcode/task-8$ nano reducer.py 
+alucloud31@ubuntu:~/hadoopcode/task-8$ hadoop fs -text common_logs/output/part-00000
+/assets/css/combined.css 	117326
+alucloud31@ubuntu:~/hadoopcode/task-8$ nano reducer.py 
+alucloud31@ubuntu:~/hadoopcode/task-8$ cat /opt/datasets/access_log | grep /assets/css/combined.css | wc -l
+117352alucloud31@ubuntu:~/hadoopcode/task-8$ cat /opt/datasets/access_log |  grep "GET /assets/css/combined.css" | wc -l
+117326
+alucloud31@ubuntu:~/hadoopcode/task-8$ hadoop fs -text common_logs/output/part-00000
+/assets/css/combined.css 	117326
+alucloud31@ubuntu:~/hadoopcode/task-8$ 

@@ -1,0 +1,10 @@
+#
+#	Reduce fase only
+#
+
+cat /opt/datasets/purchases.txt | head -n 300 | ./mapper.py | sort -k 1,1 | head -n 20 
+
+#
+#	Reduce and Map
+# 
+cat purchases/purchases.txt | head -n 50 | purchases/mapper.py | sort -k 1,1 | purchases/reducer.py | head -n 20

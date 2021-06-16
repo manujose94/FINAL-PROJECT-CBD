@@ -1,0 +1,41 @@
+cat purchases/purchases.txt | head -n 50 | purchases/mapper.py | sort -k 1,1 | purchases/reducer.py | head -n 20
+#
+#       Reduce fase only
+#
+
+cat /opt/datasets/purchases.txt | head -n 300 | ./mapper.py | sort -k 1,1 | head -n 20
+
+#
+#       Reduce and Map
+#
+cat purchases/purchases.txt | head -n 50 | purchases/mapper.py | sort -k 1,1 | purchases/reducer.py | head -n 20
+
+#
+#	Launch to hadoop
+#
+
+task-5$ ../hs mapper.py reducer.py /datasets/purchases purchases_task5/output
+task-5$ hadoop fs -text purchases_task5/output/part-00000 | head -n 20
+Albuquerque 	499.98
+Anaheim 	499.98
+Anchorage 	499.99
+Arlington 	499.95
+Atlanta 	499.96
+Aurora 	499.97
+Austin 	499.97
+Bakersfield 	499.97
+Baltimore 	499.99
+Baton Rouge 	499.98
+Birmingham 	499.99
+Boise 	499.98
+Boston 	499.99
+Buffalo 	499.99
+Chandler 	499.98
+Charlotte 	499.98
+Chesapeake 	499.98
+Chicago 	499.99
+Chula Vista 	499.99
+Cincinnati 	499.98
+
+
+

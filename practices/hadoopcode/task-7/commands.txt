@@ -1,0 +1,11 @@
+alucloud31@ubuntu:~/hadoopcode/task-7$ cat /opt/datasets/access_log | head -n 1000 | ./mapper.py |  sort -k 1,1 | ./reducer.py
+10.223.157.186 	115
+
+
+alucloud31@ubuntu:~/hadoopcode/task-7$ ../hs mapper.py reducer.py /datasets/accesslog/access_log common_logs/output
+
+
+
+alucloud31@ubuntu:~/hadoopcode/task-7$ hadoop fs -text common_logs/output/part-00000
+10.223.157.186 	115
+

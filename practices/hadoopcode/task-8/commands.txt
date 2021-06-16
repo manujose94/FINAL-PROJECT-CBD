@@ -1,0 +1,6 @@
+alucloud31@ubuntu:~/hadoopcode/task-8$ hadoop fs -text common_logs/output/part-00000 > result_part-00000
+alucloud31@ubuntu:~/hadoopcode/task-8$ cat result_part-00000 
+/assets/css/combined.css 	117348
+alucloud31@ubuntu:~/hadoopcode/task-8$ cat /opt/datasets/access_log | head -n 1000 | ./mapper.py |  sort -k 1,1 | ./reducer.py 
+/assets/css/960.css 	54
+alucloud31@ubuntu:~/hadoopcode/task-8$ 

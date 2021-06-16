@@ -1,0 +1,54 @@
+#Ejercicio 0: Para cada tienda, obtener la transacción de
+máximo importe.
+
+purchases = sc.textFile("/datasets/purchases/purchases.txt")
+splits = purchases.map(lambda s: s.split("\t"))
+costByStore = splits.map(lambda rec: (rec[2], float(rec[4])))
+maxCostByStore = costByStore.reduceByKey(max)
+print maxCostByStore
+
+#Ejercicio 1: Suma total de ventas para cada categoría de
+producto.
+>>> purchases = sc.textFile("/datasets/purchases/purchases.txt")
+>>> splits = purchases.map(lambda s: s.split("\t"))
+>>> StoreTypes = splits.map(lambda rec: (rec[3], float(rec[4])))
+>>> group = StoreTypes.groupByKey()
+>>> total = group.mapValues(lambda counts: sum(counts))
+>>> print total.take(10)
+[(u"Men's Clothing", 57621279.04000138), (u'Pet Supplies', 57197250.24000008), (u"Women's Clothing", 57434448.96999881), (u'Music', 57495489.700000465), (u'Sporting Goods', 57599085.890000574), (u'Baby', 57491808.43999965), (u"Children's Clothing", 57624820.94000126), (u'Health and Beauty', 57481589.560001), (u'Consumer Electronics', 57452374.12999909), (u'CDs', 57410753.04000111)]
+
+
+#Ejercicio 2: Número total de accesos al recurso
+"/assets/img/home-logo.png”
+#
+>>> logFile = sc.textFile("/datasets/accesslog/access_log")
+>>> splits = logFile.map(lambda s: s.split(" "))
+>>> byFile = splits.filter(lambda x: "/assets/img/home-logo.png" in x)
+>>> total = byFile.count()
+>>> print total
+
+#Ejercicio 3: Número total de accesos desde la misma dirección
+IP: 10.223.157.186
+#
+logFile = sc.textFile("/datasets/accesslog/access_log")
+splits = logFile.map(lambda s: s.split(" "))
+byFile = splits.filter(lambda x: "10.223.157.186" in x)
+total = byFile.count()
+print total
+
+ #Ejercicio 4: Recurso web con mayor número de accesos
+ #
+ logFile = sc.textFile("/datasets/accesslog/access_log")
+ splits = logFile.map(lambda s: s.split(" "))
+ ByResource = splits.map(lambda rec: (rec[6], 1))
+ group = ByResource.groupByKey()
+ totalsByResource = group.mapValues(lambda counts: sum(counts))
+ max = totalsByResource.max(lambda x:x[1])
+ print max
+(u'/assets/css/combined.css', 117348)
+
+>>> print totalsByResource.take(15)
+[(u'/database/fullDetails.php?height=600&modal=true&id=401&random=1284990132231', 1), (u'/database/fullDetails.php?height=600&modal=true&id=357&random=1286369727714', 1), (u'/images/filmmediablock/520/The_King_Maker_045.jpg', 203), (u'/trailers/index.php?p=10&r=d&l=&o=d', 8), (u'/downloadSingle.php?fid=537&id=4831', 4), (u'/news/?y=2011&amp;m=4', 20), (u'/images/filmpics/0000/3301/siege_dead_001_thumb.jpg', 355), (u'/displaytitle.php?id=318%27%20aND%20%278%27%3D%273', 1), (u'/v/rdxA95Fds2W/Star-Wars-The-Force-Unleashed-2/Exklusives-Gameplayvideo-1/', 1), (u'/legacy/images/thumbnails/thumbnail2_3370.jpg', 1), (u'/images/filmmediablock/34/SNDN3.jpeg', 42), (u'/about-us/?id=329', 1), (u'/crm/campaigns_contacts.php?c=23&_search=false&nd=1262861584054&rows=50&page=1&sidx=last_name&sord=asc', 1), (u'/download.php?id=260', 108), (u'/images/filmpics/0000/4615/dXCsX_thumb.jpg', 188)]
+
+
+

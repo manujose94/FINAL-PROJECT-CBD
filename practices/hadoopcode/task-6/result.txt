@@ -1,0 +1,17 @@
+alucloud31@ubuntu:~/hadoopcode/task-6$ cat /opt/datasets/access_log | head -n 1000 | ./mapper.py | sort -k 1,1 | ./reducer.py | head -n 15
+/ 	37
+/about-us 	6
+/about-us/ 	6
+/about-us/campaigns 	1
+/about-us/campaigns/ 	1
+/about-us/people 	2
+/about-us/people/ 	2
+/assets/css/960.css 	54
+/assets/css/reset.css 	54
+/assets/css/the-associates.css 	54
+/assets/flv/dummy/home-media-block/district-13.flv 	2
+/assets/img/about-us-logo.png 	5
+/assets/img/closelabel.gif 	53
+/assets/img/contact-us-logo.png 	5
+/assets/img/download-icon.gif 	6
+
